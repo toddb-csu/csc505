@@ -8,12 +8,12 @@
 # Use Python to write a script that will print out the names and number
 # of pages in your prototype and the sequence or flow of the pages.
 prototype_pages = [
-    {"name": "1. Landing Page"},
-    {"name": "2. Login Page"},
-    {"name": "3. Create Account"},
-    {"name": "4. Create Shopping List"},
-    {"name": "5. Add/Remove Items"},
-    {"name": "6. Edit/Remove Items"}
+    "1. Landing Page",
+    "2. Login Page",
+    "3. Create Account",
+    "4. Create Shopping List",
+    "5. Add/Remove Items",
+    "6. Edit/Remove Items"
 ]
 
 create_account_page_flow = [
@@ -43,7 +43,7 @@ if __name__ == "__main__":
     print(f"Number of pages: {len(prototype_pages)}")
     print("Page Names:")
     for page in prototype_pages:
-        print(f"- {page['name']}")
+        print(f"- {page}")
 
     print("\nNew User Page Flow:")
     for flow in create_account_page_flow:
