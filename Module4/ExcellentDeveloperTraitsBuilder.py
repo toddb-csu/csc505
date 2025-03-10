@@ -64,6 +64,7 @@ class ExcellentDeveloperTraitsBuilder:
         return ExcellentDeveloperTraits(self.traits)
 
 
+# Class constructs the complex object using the Builder interface.
 class Director:
     def __init__(self, builder):
         self._builder = builder
@@ -91,10 +92,11 @@ class Director:
                              "Willing to help and learn from others"])
         self._builder.add_trait(teamwork)
 
-    def display_traits(self):
-        self._builder.build().display_traits()
+    def return_excellent_developer(self):
+        return self._builder.build()
 
 
+# Dictionary object to store steps of the builder pattern
 builder_dict = {
     "1. Director": ["constructs the complex exceptional developer object using the builder interface"],
     "2. Concrete Builder (DeveloperTraitsBuilder)": [
@@ -103,6 +105,7 @@ builder_dict = {
 }
 
 
+# Method from previous assignment to print box around text
 def print_box(text, index, items):
     # Find the max width between the phase and all the steps
     width = len(text)
@@ -121,6 +124,7 @@ def print_box(text, index, items):
         print(index * "   " + "{}".format("  " if index > 0 else "") + "+" + "-" * width + "+")
 
 
+# Reusing implementation from previous assignment to print boxes in builder dictionary
 def display_builder_steps():
     for key in builder_dict:
         index = list(builder_dict).index(key)
@@ -135,4 +139,5 @@ if __name__ == "__main__":
     display_builder_steps()
     print("\nExample Implementation of the Builder Pattern\n")
     print("Important Excellent Developer Traits\n")
-    director.display_traits()
+    excellent_developer = director.return_excellent_developer()
+    excellent_developer.display_traits()
