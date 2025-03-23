@@ -2,8 +2,10 @@
 # CSC505: Principles of Software Development
 # Module 6: Critical Thinking Assignment
 #
+# The StepwiseRefinement class will display the steps involved in the stepwise refinement process for the
+# Check Writer application.
 class StepwiseRefinement:
-    # Default model stored in the dictionary data type
+    # Dictionary holding the levels of the stepwise refinement process.
     my_dict = {
         "Level 1: High-Level Abstract of the Algorithm": ["Read user input of a decimal amount.",
                                                           "Split an amount into dollars and cents.",
@@ -28,27 +30,14 @@ class StepwiseRefinement:
         print(index * "   " + "{}".format("| " if index > 0 else "") + "+" + "-" * width + "+")
         print(index * "   " + "{}".format("->" if index > 0 else "") + "|" + text.center(width) + "|")
         print(index * "   " + "{}".format("  " if index > 0 else "") + "+" + "-" * width + "+")
-        # Print all of the steps in the Phase
+        # Print all of the parts of the step
         for item in items:
             print(index * "   " + "{}".format("  " if index > 0 else "") + "|" + item.center(width) + "|")
-        # Only print division lines if there are steps
+        # Only print division lines if there are more than one item
         if len(items) > 0:
             print(index * "   " + "{}".format("  " if index > 0 else "") + "+" + "-" * width + "+")
 
-    # Print only the Phase headings in a pretty box
-    def print_headings(self, text, index):
-        width = len(text)
-        print(index * "   " + "{}".format("| " if index > 0 else "") + "+" + "-" * width + "+")
-        print(index * "   " + "{}".format("->" if index > 0 else "") + "|" + text.center(width) + "|")
-        print(index * "   " + "{}".format("  " if index > 0 else "") + "+" + "-" * width + "+")
-
-    # Loop through the default model and only print the phase headings
-    def display_level_headings(self):
-        for key in self.my_dict:
-            index = list(self.my_dict).index(key)
-            self.print_headings(key, index)
-
-    # Loop through the stepwise process and print the level headings and the steps
+    # Loop through the stepwise process and print the level headings and steps
     def display_process(self):
         for key in self.my_dict:
             index = list(self.my_dict).index(key)
