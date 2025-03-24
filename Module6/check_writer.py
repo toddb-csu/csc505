@@ -78,9 +78,10 @@ def get_formatted_check_amount(str_dollars, cents):
 # Our main method that starts everything.
 if __name__ == '__main__':
     user_amount = get_amount()
-    int_dollars, int_cents = split_amount(user_amount)
-    dollar_words = convert_numbers_to_words(int_dollars)
-    if dollar_words == '':
-        print(f"Sorry, but we cannot write a check for this amount: ${user_amount}")
-    else:
-        print(get_formatted_check_amount(dollar_words, int_cents))
+    if user_amount > 0:
+        int_dollars, int_cents = split_amount(user_amount)
+        dollar_words = convert_numbers_to_words(int_dollars)
+        if dollar_words == '':
+            print(f"Sorry, but we cannot write a check for this amount: ${user_amount}")
+        else:
+            print(get_formatted_check_amount(dollar_words, int_cents))
