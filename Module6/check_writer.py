@@ -57,12 +57,12 @@ def convert_number_to_words(num):
     elif num < 1000:
         words = num_to_word[int(num/100)] + ' hundred'
         if num % 100 > 0:
-            words += ' ' + convert_numbers_to_words(num % 100)
+            words += ' ' + convert_number_to_words(num % 100)
         return words
     elif num < 1000000:
-        words = convert_numbers_to_words(int(num/1000)) + ' thousand'
+        words = convert_number_to_words(int(num/1000)) + ' thousand'
         if num % 1000 > 0:
-            words += ' ' + convert_numbers_to_words(num % 1000)
+            words += ' ' + convert_number_to_words(num % 1000)
         return words
     else:
         return ''
@@ -80,7 +80,7 @@ if __name__ == '__main__':
     user_amount = get_amount()
     if user_amount > 0:
         int_dollars, int_cents = split_amount(user_amount)
-        dollar_words = convert_numbers_to_words(int_dollars)
+        dollar_words = convert_number_to_words(int_dollars)
         if dollar_words == '':
             print(f"Sorry, but we cannot write a check for this amount: ${user_amount}")
         else:
